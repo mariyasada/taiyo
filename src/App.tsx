@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Contact from './pages/Contact';
+import Siderbar from './Components/Siderbar';
+import ChartsandMaps from './pages/ChartsandMaps';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex min-h-screen items-start gap-2 w-full h-full  p-5 max-[450px]:flex-col">
+      <Siderbar/>
+      <Routes>
+           <Route path="/" element={<Contact/>} />
+           <Route path="/chartsandmaps" element={<ChartsandMaps/>} />
+          </Routes>
     </div>
   );
 }
