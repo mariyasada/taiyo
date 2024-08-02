@@ -23,7 +23,7 @@ const Contact = () => {
 
   return (
     <div className=" w-9/12 flex  flex-wrap flex-col items-start gap-8 justify-center max-[450px]: justify-start">
-      <header className="text-2xl font-semibold w-full text-center max-[450px]:text-left">
+      <header className="text-2xl font-semibold w-full text-center max-[450px]:text-left max-[450px]:ml-6">
         Contact Page
       </header>
       <div className="p-5 max-w-md mx-auto text-center max-[450px]:text-left">
