@@ -9,8 +9,7 @@ import {
   Title,
   Tooltip,
   Legend,
-} from "chart.js";   
-
+} from "chart.js";
 import { FormattedData } from "../types";
 
 ChartJS.register(
@@ -24,8 +23,8 @@ ChartJS.register(
 );
 
 export const options: any = {
-  responsive: true,   
-  maintainAspectRatio: false, 
+  responsive: true,
+  maintainAspectRatio: false,
   plugins: {
     legend: {
       position: "top" as const,
@@ -69,9 +68,10 @@ export const options: any = {
 
 export type MyComponentProps = {
   data: FormattedData[];
+  isGraphDataLoading: boolean;
 };
 
-const LineGraph = ({ data }: MyComponentProps) => {
+const LineGraph = ({ data, isGraphDataLoading }: MyComponentProps) => {
   const chartData = {
     labels: data.map((d) => d.date),
     datasets: [
@@ -85,11 +85,22 @@ const LineGraph = ({ data }: MyComponentProps) => {
   };
 
   return (
-    <div className="mt-8">  
-      <Line data={chartData} options={options} className="max-[450px]:h-[326px] max-[450px]:w-[329px] w-[1100px] h-[450px]" />
+    <div className="mt-8">
+      {isGraphDataLoading? (
+        <div className="flex flex-col p-4 rounded-lg ">
+          <div className="w-[1100px] max-[450px]:w-[280px] h-6 bg-gray-300 mb-4 rounded-md animate-pulse" />
+          <div className="w-[1100px] max-[450px]:w-[280px] h-32 bg-gray-300 mb-4 rounded-md animate-pulse" />
+          <div className="w-[1100px] max-[450px]:w-[280px] h-6 bg-gray-300 rounded-md animate-pulse" />
+        </div>
+      ) : (
+        <Line
+          data={chartData}
+          options={options}
+          className="max-[450px]:h-[326px] max-[450px]:w-[329px] w-[1100px] h-[450px]"
+        />
+      )}
     </div>
   );
 };
 
 export default LineGraph;
-

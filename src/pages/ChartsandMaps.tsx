@@ -31,8 +31,8 @@ const ChartsandMaps = () => {
   return (
     <div className='flex flex-col gap-8 flex-wrap'>
         <h2 className='font-semibold text-2xl max-[450px]:text-md ml-6'>Charts and Maps</h2>
-        <LineGraph data={lineGraphData}/>
-        <MapLeaflet countrySpecificData={countrySpecificData} worldWideData={worldWideData}/>
+        <LineGraph data={lineGraphData} isGraphDataLoading={isGraphDataLoading}/>
+        <MapLeaflet countrySpecificData={countrySpecificData} worldWideData={worldWideData}  isCountrySpecificDataLoading={ isCountrySpecificDataLoading}/>
         </div>
   )
 }
