@@ -5,14 +5,20 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 
 const globalIconPng = "/Location.png";
+const countryIcon="/location-gray.png";
 
-console.log(globalIconPng, "png image");
 const globalIconInstance = L.icon({
   iconUrl: globalIconPng,
   iconSize: [52, 52],
   iconAnchor: [16, 32],
   popupAnchor: [0, -32],
 });
+
+const countryIconInstance=L.icon({
+  iconUrl: countryIcon,
+  iconSize: [32, 32],
+  
+})
 
 type MyComponentProps = {
   countrySpecificData: CountrySpecificData[];
@@ -69,6 +75,7 @@ const MapLeaflet = ({
             <Marker
               key={country.countryInfo.iso3}
               position={[country.countryInfo.lat, country.countryInfo.long]}
+              icon={countryIconInstance}
             >
               <Popup>
                 <div>
