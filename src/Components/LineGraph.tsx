@@ -114,7 +114,7 @@ const LineGraph = ({
         <div className="overflow-x-auto">
           <div
             style={{
-              width: screenWidth < 500 ? "370px" : "1100px",
+              width: screenWidth < 500 ? "320px" : "1100px",
               height: screenWidth < 500 ? "350px" : "450px",
             }}
           >

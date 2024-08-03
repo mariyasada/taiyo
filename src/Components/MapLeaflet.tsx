@@ -42,10 +42,11 @@ const MapLeaflet = ({
           <div className="w-[1100px] max-[450px]:w-[280px] h-6 bg-gray-300 rounded-md animate-pulse" />
         </div>
       ) : (
+        <div className="overflow-x-auto">
         <div
           style={{
             height: screenWidth < 500 ? "350px" : "500px",
-            width: screenWidth < 500 ? "310px" : "100%",
+            width: screenWidth < 500 ? "320px" : "100%",
           }}
         >
         <MapContainer
@@ -93,6 +94,7 @@ const MapLeaflet = ({
             </Marker>
           ))}
         </MapContainer>
+        </div>
         </div>
       )}
     </>
