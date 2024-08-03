@@ -101,6 +101,7 @@ const LineGraph = ({
       },
     ],
   };
+  console.log(screenWidth,"check screen width")
 
   return (
     <div className="mt-8  ">
@@ -114,7 +115,7 @@ const LineGraph = ({
         <div className="overflow-x-auto">
           <div
             style={{
-              width: screenWidth < 500 ? "320px" : "1100px",
+              width: screenWidth < 500 ? "320px" : screenWidth===1280 || screenWidth===1440?"1000px": "1100px",
               height: screenWidth < 500 ? "350px" : "450px",
             }}
           >
