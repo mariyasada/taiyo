@@ -94,7 +94,7 @@ const LineGraph = ({ data, isGraphDataLoading,screenWidth }: MyComponentProps) =
           <div className="w-[1100px] max-[450px]:w-[280px] h-6 bg-gray-300 rounded-md animate-pulse" />
         </div>
       ) : (
-        <div style={{ width: screenWidth < 500 ? '300px' : '1100px', height: screenWidth < 500 ? '320px' : '450px' }}>
+        <div style={{ width: screenWidth < 500 ? '350px' : '1100px', height: screenWidth < 500 ? '350px' : '450px' }}>
           <Line data={chartData} options={options} />
         </div>
       )}
