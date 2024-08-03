@@ -43,7 +43,7 @@ const ChartsandMaps = () => {
 
   return (
     <div className="flex flex-col gap-8 flex-wrap overflow-hidden mx-2 lg:mx-4 lg:gap-6">
-      <h2 className="text-2xl font-semibold w-full text-center max-[450px]:text-left max-[450px]:ml-6 ">
+      <h2 className="text-2xl font-semibold w-full text-center max-[450px]:text-left max-[450px]:ml-6">
         Charts and Maps
       </h2>
       <div className="w-full overflow-x-auto">
