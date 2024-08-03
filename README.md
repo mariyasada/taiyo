@@ -2,15 +2,6 @@
 
 A responsive React application to track COVID-19 data, including global statistics and country-specific information. The application features a sidebar with navigation to a Contact page and a Charts and Maps page.
 
-## Table of Contents
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Features
 
 ### Sidebar Navigation
@@ -33,7 +24,7 @@ A responsive React application to track COVID-19 data, including global statisti
 - **React-Redux**: For state management.
 - **React-Leaflet**: For displaying maps.
 - **React-chartjs-2**: for displaying Chart
---**React-Query** :for handling api calls and data management 
+-- **React-Query** :for handling api calls and data management 
 - **Axios**: For making API requests.
 - **UUID**: For generating unique identifiers.
 - **Tailwind CSS**: For styling the application.
@@ -50,7 +41,11 @@ A responsive React application to track COVID-19 data, including global statisti
    git clone https://github.com/yourusername/covid-dashboard.git
    cd covid-dashboard
 2. Install Dependencies
-    npm install
+  ```bash    
+   npm install
+3. Start development server
+   ```bash
+    npm start
 
 
 
