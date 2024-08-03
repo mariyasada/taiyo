@@ -106,7 +106,7 @@ const CreateContactScreen = ({
       <IoClose
         className="absolute text-black-500 top-2 right-2 cursor-pointer"
         size={30}
-        onClick={() => setIsCreateContactClicked(false)}
+        onClick={() => {setIsCreateContactClicked(false);setIsEditItem(null)}}
       />
     </div>
   );
