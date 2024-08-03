@@ -56,15 +56,13 @@ export const options: any = {
         size: 16,
         weight: "bold",
       },
-      
     },
-    
+
     y: {
       title: {
         display: true,
         text: "Cases",
       },
-      
     },
   },
 };
@@ -72,10 +70,14 @@ export const options: any = {
 export type MyComponentProps = {
   data: FormattedData[];
   isGraphDataLoading: boolean;
-  screenWidth:number
+  screenWidth: number;
 };
 
-const LineGraph = ({ data, isGraphDataLoading,screenWidth }: MyComponentProps) => {
+const LineGraph = ({
+  data,
+  isGraphDataLoading,
+  screenWidth,
+}: MyComponentProps) => {
   const chartData = {
     labels: data.map((d) => d.date),
     datasets: [
@@ -83,7 +85,7 @@ const LineGraph = ({ data, isGraphDataLoading,screenWidth }: MyComponentProps) =
         label: "Covid-19 Cases",
         data: data.map((d) => d.cases),
         fill: false,
-        backgroundColor: "green"
+        backgroundColor: "green",
       },
       {
         label: "Covid-19 Deaths",
@@ -102,15 +104,22 @@ const LineGraph = ({ data, isGraphDataLoading,screenWidth }: MyComponentProps) =
 
   return (
     <div className="mt-8  ">
-      {isGraphDataLoading? (
+      {isGraphDataLoading ? (
         <div className="flex flex-col p-4 rounded-lg ">
           <div className="w-[1100px] max-[450px]:w-[280px] h-6 bg-gray-300 mb-4 rounded-md animate-pulse" />
           <div className="w-[1100px] max-[450px]:w-[280px] h-32 bg-gray-300 mb-4 rounded-md animate-pulse" />
           <div className="w-[1100px] max-[450px]:w-[280px] h-6 bg-gray-300 rounded-md animate-pulse" />
         </div>
       ) : (
-        <div style={{ width: screenWidth < 500 ? '310px' : '1100px', height: screenWidth < 500 ? '350px' : '450px' }}>
-          <Line data={chartData} options={options} />
+        <div className="overflow-x-auto">
+          <div
+            style={{
+              width: screenWidth < 500 ? "370px" : "1100px",
+              height: screenWidth < 500 ? "350px" : "450px",
+            }}
+          >
+            <Line data={chartData} options={options} />
+          </div>
         </div>
       )}
     </div>
