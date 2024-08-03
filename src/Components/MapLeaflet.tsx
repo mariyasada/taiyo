@@ -39,7 +39,7 @@ const MapLeaflet = ({
         <div
           style={{
             height: screenWidth < 500 ? "350px" : "500px",
-            width: screenWidth < 500 ? "290px" : "100%",
+            width: screenWidth < 500 ? "300px" : "100%",
           }}
         >
         <MapContainer
