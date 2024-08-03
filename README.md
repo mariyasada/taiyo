@@ -15,9 +15,6 @@ A responsive React application to track COVID-19 data, including global statisti
     - Gray icons: Display country-specific data including active cases, total cases, recovered cases, and deaths.
     - Red icons: Display global COVID-19 statistics.
 
-### Responsive Design
-- The application is fully responsive and works on various screen sizes.
-
 ## Technologies Used
 - **React**: For building the user interface.
 - **React Router**: For handling navigation.
