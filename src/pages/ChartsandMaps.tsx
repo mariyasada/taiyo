@@ -3,6 +3,7 @@ import { useMapData } from "../utils/useMapData";
 import LineGraph from "../Components/LineGraph";
 import { FormattedData } from "../types";
 import MapLeaflet from "../Components/MapLeaflet";
+import { Months } from "../Constants";
 
 const ChartsandMaps = () => {
   const [lineGraphData, setLineGraphData] = useState<FormattedData[]>([]);
@@ -21,15 +22,41 @@ const ChartsandMaps = () => {
 
   useEffect(() => {
     if (graphData) {
-      const formattedData: FormattedData[] = Object.keys(graphData).map(
-        (date) => ({
-          date,
-          cases: graphData[date],
-        })
-      );
+      const monthlyData: { [key: string]: { cases: number; deaths: number; recovered: number } } = {};
+
+      const dates = new Set([
+        ...Object.keys(graphData.cases || {}),
+        ...Object.keys(graphData.recovered || {}),
+        ...Object.keys(graphData.deaths || {})
+      ]);
+
+     
+
+      dates.forEach((date) => {
+        const dateObj = new Date(date);
+        const monthYear = `${Months[dateObj.getMonth() + 1]}-${dateObj.getFullYear()}`; // month-year
+  
+        if (!monthlyData[monthYear]) {
+          monthlyData[monthYear] = { cases: 0, deaths: 0, recovered: 0 };
+        }
+  
+        monthlyData[monthYear].cases += graphData.cases[date] || 0;
+        monthlyData[monthYear].deaths += graphData.deaths[date] || 0;
+        monthlyData[monthYear].recovered += graphData.recovered[date] || 0;
+      });
+  
+      const formattedData: FormattedData[] = Object.keys(monthlyData).map((key) => ({
+        date: key,
+        cases: monthlyData[key].cases,
+        deaths: monthlyData[key].deaths,
+        recovered: monthlyData[key].recovered,
+      }));
+  
       setLineGraphData(formattedData);
-    }
+  }
   }, [graphData]);
+
+
 
   useEffect(() => {
     const handleResize = () => {

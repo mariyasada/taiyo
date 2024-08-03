@@ -56,12 +56,15 @@ export const options: any = {
         size: 16,
         weight: "bold",
       },
+      
     },
+    
     y: {
       title: {
         display: true,
         text: "Cases",
       },
+      
     },
   },
 };
@@ -80,7 +83,19 @@ const LineGraph = ({ data, isGraphDataLoading,screenWidth }: MyComponentProps) =
         label: "Covid-19 Cases",
         data: data.map((d) => d.cases),
         fill: false,
-        backgroundColor: "rgba(75,192,192,0.2)",
+        backgroundColor: "green"
+      },
+      {
+        label: "Covid-19 Deaths",
+        data: data.map((d) => d.deaths),
+        fill: false,
+        backgroundColor: "red",
+      },
+      {
+        label: "Covid-19 Recovered",
+        data: data.map((d) => d.recovered),
+        fill: false,
+        backgroundColor: "blue",
       },
     ],
   };
@@ -94,7 +109,7 @@ const LineGraph = ({ data, isGraphDataLoading,screenWidth }: MyComponentProps) =
           <div className="w-[1100px] max-[450px]:w-[280px] h-6 bg-gray-300 rounded-md animate-pulse" />
         </div>
       ) : (
-        <div style={{ width: screenWidth < 500 ? '330px' : '1100px', height: screenWidth < 500 ? '350px' : '450px' }}>
+        <div style={{ width: screenWidth < 500 ? '310px' : '1100px', height: screenWidth < 500 ? '350px' : '450px' }}>
           <Line data={chartData} options={options} />
         </div>
       )}

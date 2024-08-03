@@ -45,7 +45,7 @@ const MapLeaflet = ({
         <div
           style={{
             height: screenWidth < 500 ? "350px" : "500px",
-            width: screenWidth < 500 ? "330px" : "100%",
+            width: screenWidth < 500 ? "310px" : "100%",
           }}
         >
         <MapContainer
@@ -55,7 +55,7 @@ const MapLeaflet = ({
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           {worldWideData && (
-            <Marker position={[-10, 0]} icon={globalIconInstance}>
+            <Marker position={[50, 80]} icon={globalIconInstance}>
               <Popup>
                 <div>
                   <strong>World wide Data</strong>

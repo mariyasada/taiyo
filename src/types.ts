@@ -28,6 +28,8 @@ export type ContactActionTypes = AddorUpdateContactAction | DeleteContactAction 
 export type FormattedData={
     date:string,
     cases:number
+    deaths:number,
+    recovered:number
 }
 export type CountrySpecificData={
     country:string,

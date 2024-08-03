@@ -31,7 +31,7 @@ export const useMapData = () => {
   const fetchGraphData = async () => {
     return await axios
       .get("https://disease.sh/v3/covid-19/historical/all?lastdays=all")
-      .then((res) =>res?.data?.cases);
+      .then((res) =>res?.data);
   };
 
   const {
