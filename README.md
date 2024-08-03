@@ -27,6 +27,9 @@ A responsive React application to track COVID-19 data, including global statisti
 - **Tailwind CSS**: For styling the application.
 - **TypeScript** : for type checking
 
+## Live URL
+ -- **Deployed Link**: https://taiyo-assignment-by-mariya.netlify.app/
+
 ## Getting Started
 
 ### Prerequisites
