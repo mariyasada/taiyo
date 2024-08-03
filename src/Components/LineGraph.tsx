@@ -101,7 +101,7 @@ const LineGraph = ({
       },
     ],
   };
-  console.log(screenWidth,"check screen width")
+  
 
   return (
     <div className="mt-8  ">
