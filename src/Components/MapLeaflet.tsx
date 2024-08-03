@@ -18,12 +18,14 @@ type MyComponentProps = {
   countrySpecificData: CountrySpecificData[];
   worldWideData: CovidStats;
   isCountrySpecificDataLoading: boolean;
+  screenWidth:number
 };
 
 const MapLeaflet = ({
   countrySpecificData,
   worldWideData,
   isCountrySpecificDataLoading,
+  screenWidth
 }: MyComponentProps) => {
   return (
     <>
@@ -34,10 +36,16 @@ const MapLeaflet = ({
           <div className="w-[1100px] max-[450px]:w-[280px] h-6 bg-gray-300 rounded-md animate-pulse" />
         </div>
       ) : (
+        <div
+          style={{
+            height: screenWidth < 500 ? "350px" : "500px",
+            width: screenWidth < 500 ? "290px" : "100%",
+          }}
+        >
         <MapContainer
           center={[0, 0]}
           zoom={2}
-          className="h-[500px] w-full max-[450x]:h-[350px] max-[450x]:w-[350px]"
+          style={{ height: "100%", width: "100%" }}
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           {worldWideData && (
@@ -78,6 +86,7 @@ const MapLeaflet = ({
             </Marker>
           ))}
         </MapContainer>
+        </div>
       )}
     </>
   );

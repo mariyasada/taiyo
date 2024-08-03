@@ -44,11 +44,12 @@ const Contact = () => {
             setIsEditItem={setIsEditItem}
           />
         )}
-        {!isCreateContactClicked && contactList?.length === 0 ? (
+        {!isCreateContactClicked  && contactList?.length === 0 ? (
           <div className="mt-4 text-gray-600">
             No contact found. Please add contact from create contact button.
           </div>
         ) : (
+          !isEditItem &&
           contactList?.map((contact: ContactType) => (
             <DisplayContact
               key={contact.id}

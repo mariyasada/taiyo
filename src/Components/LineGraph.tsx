@@ -69,9 +69,10 @@ export const options: any = {
 export type MyComponentProps = {
   data: FormattedData[];
   isGraphDataLoading: boolean;
+  screenWidth:number
 };
 
-const LineGraph = ({ data, isGraphDataLoading }: MyComponentProps) => {
+const LineGraph = ({ data, isGraphDataLoading,screenWidth }: MyComponentProps) => {
   const chartData = {
     labels: data.map((d) => d.date),
     datasets: [
@@ -85,7 +86,7 @@ const LineGraph = ({ data, isGraphDataLoading }: MyComponentProps) => {
   };
 
   return (
-    <div className="mt-8">
+    <div className="mt-8  ">
       {isGraphDataLoading? (
         <div className="flex flex-col p-4 rounded-lg ">
           <div className="w-[1100px] max-[450px]:w-[280px] h-6 bg-gray-300 mb-4 rounded-md animate-pulse" />
@@ -93,11 +94,9 @@ const LineGraph = ({ data, isGraphDataLoading }: MyComponentProps) => {
           <div className="w-[1100px] max-[450px]:w-[280px] h-6 bg-gray-300 rounded-md animate-pulse" />
         </div>
       ) : (
-        <Line
-          data={chartData}
-          options={options}
-          className="max-[450px]:h-[326px] max-[450px]:w-[329px] w-[1100px] h-[450px]"
-        />
+        <div style={{ width: screenWidth < 500 ? '290px' : '1100px', height: screenWidth < 500 ? '320px' : '450px' }}>
+          <Line data={chartData} options={options} />
+        </div>
       )}
     </div>
   );

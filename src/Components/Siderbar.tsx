@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Siderbar = () => {
   return (
-    <div className="w-[20%] flex flex-col gap-7 mt-0 p-5 max-[450px]:flex-row max-[450px]:w-[90%]">
+    <div className="w-full sm:w-[20%] flex flex-row sm:flex-col gap-5 mt-0 p-5">
     <div>
         <Link className="text-md font-bold text-blue-500" to="/">
             Contacts

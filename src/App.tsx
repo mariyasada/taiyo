@@ -7,7 +7,7 @@ import ChartsandMaps from './pages/ChartsandMaps';
 
 function App() {
   return (
-    <div className="flex min-h-screen items-start gap-2 w-full h-full  p-5 max-[450px]:flex-col">
+    <div className="flex min-h-screen items-start w-full h-full p-5 max-[450px]:flex-col">
       <Siderbar/>
       <Routes>
            <Route path="/" element={<Contact/>} />

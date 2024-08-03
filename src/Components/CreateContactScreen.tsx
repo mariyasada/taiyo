@@ -101,7 +101,7 @@ const CreateContactScreen = ({
         className="mt-5 w-full py-2 bg-blue-500 text-white font-semibold rounded-md"
         onClick={submitHandler}
       >
-        {isEditItem ? "Update Contact" : "Save Contact"}
+        {isEditItem ? "Save Editted Contact" : "Save Contact"}
       </button>
       <IoClose
         className="absolute text-black-500 top-2 right-2 cursor-pointer"
